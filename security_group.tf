@@ -1,4 +1,4 @@
-resource "aws-security-group" "alb" {
+resource "aws_security_group" "alb" {
   name        = "${local.app}-alb"
   description = "For ALB."
   vpc_id      = module.vpc.vpc_id
@@ -37,7 +37,7 @@ resource "aws-security-group" "ecs" {
   }
 }
 
-resource "aws-security-group-role" "ecs_from_alb" {
+resource "aws_security_group_rule" "ecs_from_alb" {
   description              = "Allow 8080 from Security Group for ALB."
   type                     = "ingress"
   from_port                = 8080
