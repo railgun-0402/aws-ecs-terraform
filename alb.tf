@@ -43,7 +43,7 @@ resource "aws_lb_listener_rule" "alb_listener_rule" {
 
 resource "aws_lb_target_group" "target_group" {
   # 3 回連続で 5 秒以内にレスポンスが返って来ればコンテナが生きているとみなされる
-  name        = "${local.app}-target_group"
+  name        = "${local.app}-target-group"
   port        = 8080
   protocol    = "HTTP"
   target_type = "ip"
