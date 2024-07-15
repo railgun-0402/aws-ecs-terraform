@@ -21,7 +21,7 @@ resource "aws_security_group" "alb" {
   }
 }
 
-resource "aws-security-group" "ecs" {
+resource "aws_security_group" "ecs" {
   name        = "${local.app}-ecs"
   description = "For ECS."
   vpc_id      = module.vpc.vpc_id
